@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import math
 
-st.titre('Projet oiseaux :bird: de :bleu[Marseille] :sunglasses: !')
+st.title('Projet oiseaux :bird: de :bleu[Marseille] :sunglasses: !')
 st.text("Lea COQUEREAU\nGuillaume VALENTIN\nAndreas JULIEN-CARAGUEL")
 
 
