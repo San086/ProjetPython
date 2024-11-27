@@ -23,3 +23,5 @@ if "Latitude" in data.columns and "Longitude" in data.columns:
     if not mappy.empty:
         st.map(mappy)
 
+st.map(mappy)
+
