@@ -19,7 +19,7 @@ df
 st.header("Répartition des oiseaux dans Marseille (sans fond de carte)", divider=True)
 
 if "Latitude" in data.columns and "Longitude" in data.columns:
-    mappy = data[["Latitude", "Longitude"]].dropna()
+    mappy = data[["Latitude", "Longitude"]]
 
 st.map(mappy)
 
