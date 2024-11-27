@@ -16,4 +16,4 @@ data.insert(0, 'ID', range(1, 1 + len(data)))
 df = pd.DataFrame(data)
 df
 
-st.header("Tableau de données", divider=True)
+st.header("Répartition des oiseaux dans Marseille (sans fond de carte)", divider=True)
