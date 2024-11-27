@@ -4,6 +4,6 @@ import numpy as np
 import math
 
 st.title('Projet oiseaux de Marseille !')
-st.write('Lea COQUEREAU\n Guillaume VALENTIN\n Andreas JULIEN-CARAGUEL')
+st.text("Lea COQUEREAU\nGuillaume VALENTIN\nAndreas JULIEN-CARAGUEL")
 
 
