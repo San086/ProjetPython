@@ -19,7 +19,6 @@ df
 st.header("Répartition des oiseaux dans Marseille (sans fond de carte)", divider=True)
 
 df = pd.DataFrame(
-    np.(data['Latitude'], data['Longitude']),
     columns=["Latitude", "Longitude"],
 )
 st.map(df)
