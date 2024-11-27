@@ -18,4 +18,6 @@ df
 
 st.header("Répartition des oiseaux dans Marseille (sans fond de carte)", divider=True)
 
+st.header("Distribution des noms des sites", divider=True)
+
 
