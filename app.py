@@ -17,3 +17,6 @@ df = pd.DataFrame(data)
 df
 
 st.header("Répartition des oiseaux dans Marseille (sans fond de carte)", divider=True)
+plt.figure(figsize=(10,10))
+plt.scatter(data['Latitude'], data['Longitude'])
+plt.show()
