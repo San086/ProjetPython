@@ -20,5 +20,5 @@ st.header("Répartition des oiseaux dans Marseille (sans fond de carte)", divide
 
 st.header("Distribution des noms des sites", divider=True)
 df["Simplified Nom du site"] = df["Nom du site"].str.split(" ;").str[0]
-st.bar_chart(data,["Simplified Nom du site"], color="site", stack=False)
+st.bar_chart(["Simplified Nom du site"], color="site", stack=False)
 
