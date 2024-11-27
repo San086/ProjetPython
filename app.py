@@ -20,8 +20,6 @@ st.header("Répartition des oiseaux dans Marseille (sans fond de carte)", divide
 
 if "Latitude" in data.columns and "Longitude" in data.columns:
     mappy = data[["Latitude", "Longitude"]].dropna()
-    if not mappy.empty:
-        st.map(mappy)
 
 st.map(mappy)
 
