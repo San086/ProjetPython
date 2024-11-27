@@ -11,4 +11,5 @@ fichier = "marseille_biodiversite_oiseaux_parcs.csv"
 data = pd.read_csv(fichier)
 
 
-st.line_chart(data)
+df = pd.DataFrame(data)
+df
