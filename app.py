@@ -10,6 +10,7 @@ st.text("Lea COQUEREAU\nGuillaume VALENTIN\nAndreas JULIEN-CARAGUEL")
 fichier = "marseille_biodiversite_oiseaux_parcs.csv"
 data = pd.read_csv(fichier)
 
+st.header("Tableau de données", divider=True)
 
 df = pd.DataFrame(data)
 df
