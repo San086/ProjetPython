@@ -18,7 +18,6 @@ df
 
 st.header("Répartition des oiseaux dans Marseille (sans fond de carte)", divider=True)
 
-
 st.header("Distribution des noms des sites", divider=True)
 bar = df["Nom du site"].str.split(" ;").str[0]
 st.bar_chart(bar)
@@ -35,8 +34,6 @@ st.header("Nombre d'observation par espèce à Marseille", divider=True)
 ver = df["Nom vernaculaire"]
 st.bar_chart(ver)
 
-
-
 st.header("Tableau du nombre d'espèce", divider=True)
-tab1 = data["Nom vernaculaire"].value_counts()
-tab1
+#tab1 = data["Nom vernaculaire"].value_counts()
+#tab1
