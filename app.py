@@ -95,17 +95,7 @@ except Exception as e:
 
 
 
-st.link_button("Clique pour une surprise", "https://chat-jai-pete.fr/")
-
-
-
-
-
-
-
-
-
-
+st.header("Graphique du nombre d'espèces observer par site", divider=True)
 # Vérification de la colonne "Nom du site"
 if "Nom du site" not in data.columns:
     st.error("La colonne 'Nom du site' est manquante dans les données.")
@@ -138,3 +128,9 @@ chart = (
 
 # Affichage dans Streamlit
 st.altair_chart(chart, use_container_width=True)
+
+
+
+st.header("Surprise", divider=True)
+st.link_button("Clique pour une surprise", "https://chat-jai-pete.fr/")
+
