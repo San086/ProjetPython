@@ -60,7 +60,7 @@ arcs
 
 
 nom_vernaculaire_selection = st.selectbox(
-    "Sélectionnez une espèce pour voir ses informations :", 
+    "Sélectionnez une espèce pour voir où elle a été observer :", 
     options=data["Nom vernaculaire"].unique(),
     index=None,
     placeholder="Selectionne une espèce d'oiseau...",
