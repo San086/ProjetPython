@@ -63,7 +63,7 @@ nom_vernaculaire_selection = st.selectbox(
     "Sélectionnez une espèce pour voir ses informations :", 
     options=data["Nom vernaculaire"].unique(),
     index=None,
-    placeholder="Select contact method...",
+    placeholder="Selectionne une espèce d'oiseau...",
 )
 
 espece_info = data[data["Nom vernaculaire"] == nom_vernaculaire_selection]
