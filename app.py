@@ -113,7 +113,7 @@ if "Nom du site" not in data.columns:
 
 # Comptage des occurrences par site
 site_counts = data["Nom du site"].value_counts().reset_index()
-site_counts.columns = ["Nom du site", "Nombre d'espèces observer"]
+site_counts.columns = ["Nom du site", "Fréquence"]
 
 # Création du graphique avec Altair
 chart = (
@@ -121,11 +121,11 @@ chart = (
     .mark_bar(color="skyblue")
     .encode(
         x=alt.X("Nom du site", sort="-y", title="Nom du Site"),
-        y=alt.Y("Nombre d'espèces observer", title="Nombre d'espèces observer"),
-        tooltip=["Nom du site", "Nombre d'espèces observer"],
+        y=alt.Y("Fréquence", title="Nombre d'espèces observer"),
+        tooltip=["Nom du site", "Fréquence"],
     )
     .properties(
-        title="Distribution du nombre d'espèces observer dans chaque parcs",
+        title="Distribution des Noms des Sites (Simplifiés)",
         width=800,
         height=400,
     )
