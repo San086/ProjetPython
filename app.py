@@ -16,23 +16,22 @@ data.insert(0, 'ID', range(1, 1 + len(data)))
 df = pd.DataFrame(data)
 df
 
-st.header("Répartition des oiseaux dans Marseille (sans fond de carte)", divider=True)
 
 st.header("Distribution des noms des sites", divider=True)
 bar = df["Nom du site"].str.split(" ;").str[0]
-st.bar_chart(bar)
+st.line_chart(bar)
 
 st.header("Distribution des types", divider=True)
 ty = df["Type"]
-st.bar_chart(ty)
+st.line_chart(ty)
 
 st.header("Nombre d'espèces observer par parc", divider=True)
 df_grouped = df.groupby("Période d'observation")["Nom du site"].first().reset_index()
-st.bar_chart(df_grouped)
+st.line_chart(df_grouped)
 
 st.header("Nombre d'observation par espèce à Marseille", divider=True)
 ver = df["Nom vernaculaire"]
-st.bar_chart(ver)
+st.line_chart(ver)
 
 
 st.header("Tableau du nombre d'espèce", divider=True)
@@ -55,3 +54,7 @@ arcs = pd.DataFrame({
 })
 
 arcs
+
+
+
+st.header("Répartition des oiseaux dans Marseille (sans fond de carte)", divider=True)
