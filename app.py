@@ -62,7 +62,7 @@ st.header("Répartition des oiseaux dans Marseille (sans fond de carte)", divide
 
 st.header("Carte des observations des oiseaux")
 try:
-    mappy = data[['latitude', 'longitude']].dropna()  # Retirer les lignes avec des valeurs manquantes
+    mappy = data[['Latitude', 'Longitude']].dropna()  # Retirer les lignes avec des valeurs manquantes
     st.map(mappy)
 except Exception as e:
     st.error(f"Une erreur est survenue lors de la création de la carte : {e}")
