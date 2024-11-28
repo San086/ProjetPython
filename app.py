@@ -5,9 +5,10 @@ import math
 
 
 st.title('Projet oiseaux :bird: de :blue[Marseille] :sunglasses:')
-st.text("Lea COQUEREAU\nGuillaume VALENTIN\nAndreas JULIEN-CARAGUEL")
+st.text("Lea COQUEREAU\nGuillaume VALENTIN\nAndreas JULIEN-CARAGUEL\n black:[https://chat-jai-pete.fr/]")
 st.header("Problématique", divider="gray")
-st.text("Comment sont différentes espèces d'oiseaux de Marseille sont-elle réparti dans la ville ?")
+st.text("Comment les différentes espèces d'oiseaux de Marseille sont-elle réparti dans la ville ?")
+
 
 fichier = "marseille_biodiversite_oiseaux_parcs.csv"
 data = pd.read_csv(fichier)
