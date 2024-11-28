@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import math
-
+import folium
+import plotly.express as px
 
 st.title('Projet oiseaux :bird: de :blue[Marseille] :sunglasses:')
 st.text("Lea COQUEREAU\nGuillaume VALENTIN\nAndreas JULIEN-CARAGUEL")
