@@ -142,4 +142,5 @@ except Exception as e:
 
 st.header("Surprise", divider=True)
 st.link_button("Clique pour une surprise", "https://chat-jai-pete.fr/")
+st.link_button("Surprise pour Julien", "https://youtube.com/clip/UgkxJYuLWF-dmcaVzJN7aGK6j6cXH4Rg4bsD?si=LVFHsB_TEh_y_Yi2")
 
