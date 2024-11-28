@@ -60,3 +60,11 @@ arcs
 
 st.header("Répartition des oiseaux dans Marseille (sans fond de carte)", divider=True)
 
+# Création d'une carte avec les points des coordonnées
+st.header("Carte des observations des oiseaux")
+try:
+    mappy = data[['Latitude', 'Longitude']].dropna()  # Retirer les lignes avec des valeurs manquantes
+    st.map(mappy)
+except Exception as e:
+    st.error(f"Une erreur est survenue lors de la création de la carte : {e}")
+
