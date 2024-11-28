@@ -14,7 +14,7 @@ st.text("Comment les différentes espèces d'oiseaux de Marseille sont-elle rép
 fichier = "marseille_biodiversite_oiseaux_parcs.csv"
 data = pd.read_csv(fichier)
 
-st.header("Tableau de données", divider=True)
+st.header("Tableau de données (brute)", divider=True)
 data.insert(0, 'ID', range(1, 1 + len(data)))
 df = pd.DataFrame(data)
 df
