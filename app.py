@@ -113,7 +113,7 @@ if "Nom du site" not in data.columns:
 
 # Comptage des occurrences par site
 site_counts = data["Nom du site"].value_counts().reset_index()
-site_counts.columns = ["Nom du site", "Fréquence"]
+site_counts.columns = ["Nom du site", "Nombre d'espèces observer"]
 
 # Création du graphique avec Altair
 chart = (
