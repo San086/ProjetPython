@@ -66,7 +66,6 @@ if 'Latitude' not in data.columns or 'Longitude' not in data.columns:
 
 data = data.rename(columns={'Latitude': 'latitude', 'Longitude': 'longitude'})
 
-st.header("Carte des observations des oiseaux", divider=True)
 try:
     mappy = data[['latitude', 'longitude']].dropna() 
     st.map(mappy)
