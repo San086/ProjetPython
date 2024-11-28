@@ -5,7 +5,8 @@ import math
 
 
 st.title('Projet oiseaux :bird: de :blue[Marseille] :sunglasses:')
-st.text("Lea COQUEREAU\nGuillaume VALENTIN\nAndreas JULIEN-CARAGUEL\n https://chat-jai-pete.fr/")
+st.text("Lea COQUEREAU\nGuillaume VALENTIN\nAndreas JULIEN-CARAGUEL\n")
+st.link_button("Clique pour une surprise", "https://streamlit.io/gallery")
 st.header("Problématique", divider="gray")
 st.text("Comment les différentes espèces d'oiseaux de Marseille sont-elle réparti dans la ville ?")
 
