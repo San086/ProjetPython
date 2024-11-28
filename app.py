@@ -58,8 +58,8 @@ arcs
 
 
 st.header("Répartition des oiseaux dans Marseille (sans fond de carte)", divider=True)
-df = pd.DataFrame(
+test = pd.DataFrame(
     np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
     columns=["lat", "lon"],
 )
-st.map(df)
+st.map(test)
