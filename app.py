@@ -74,7 +74,7 @@ chart = (
     alt.Chart(site_counts)
     .mark_bar(color="skyblue")
     .encode(
-        x=alt.X("Nom du site", sort="-y", title="Nom du Site"),
+        x=alt.X("Nom du site", sort="-y", title="Nom du site"),
         y=alt.Y("Fréquence", title="Nombre d'espèces observées"),
         tooltip=["Nom du site", "Fréquence"],
     )
@@ -108,7 +108,7 @@ arcs
 
 
 nom_vernaculaire_selection = st.selectbox(
-    "Sélectionnez une espèce pour voir où elle a été observer :", 
+    "Sélectionnez une espèce pour voir où elle a été observée :", 
     options=data["Nom vernaculaire"].unique(),
     index=None,
     placeholder="Selectionne une espèce d'oiseau...",
