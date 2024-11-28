@@ -26,3 +26,7 @@ st.header("Distribution des types", divider=True)
 ty = df["Type"]
 st.bar_chart(ty)
 
+st.header("Nombre d'espèces observer par parc", divider=True)
+df_grouped = df.groupby("Période d'observation")["Nom du site"].first().reset_index()
+st.bar_chart(df_grouped)
+
