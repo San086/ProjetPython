@@ -97,3 +97,44 @@ except Exception as e:
 
 st.link_button("Clique pour une surprise", "https://chat-jai-pete.fr/")
 
+
+
+
+
+
+
+
+
+
+# Vérification de la colonne "Nom du site"
+if "Nom du site" not in data.columns:
+    st.error("La colonne 'Nom du site' est manquante dans les données.")
+    st.stop()
+
+# Comptage des occurrences par site
+site_counts = data["Nom du site"].value_counts().reset_index()
+site_counts.columns = ["Nom du site", "Fréquence"]
+
+# Création du graphique avec Altair
+chart = (
+    alt.Chart(site_counts)
+    .mark_bar(color="skyblue")
+    .encode(
+        x=alt.X("Nom du site", sort="-y", title="Nom du Site"),
+        y=alt.Y("Fréquence", title="Fréquence"),
+        tooltip=["Nom du site", "Fréquence"],
+    )
+    .properties(
+        title="Distribution des Noms des Sites (Simplifiés)",
+        width=800,
+        height=400,
+    )
+    .configure_axis(
+        labelFontSize=12,
+        titleFontSize=14,
+    )
+    .configure_title(fontSize=16)
+)
+
+# Affichage dans Streamlit
+st.altair_chart(chart, use_container_width=True)
