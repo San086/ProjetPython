@@ -58,6 +58,21 @@ arcs = pd.DataFrame({
 
 arcs
 
+nom_vernaculaire_selection = st.selectbox(
+    "Sélectionnez une espèce pour voir ses informations :", 
+    options=data["Nom vernaculaire"].unique()
+)
+
+# Filtrer les informations pour l'espèce sélectionnée
+espece_info = data[data["Nom vernaculaire"] == nom_vernaculaire_selection]
+
+# Affichage des informations de l'espèce sélectionnée
+if not espece_info.empty:
+    st.write(f"Informations pour l'espèce : **{nom_vernaculaire_selection}**")
+    st.dataframe(espece_info)
+else:
+    st.warning(f"Aucune donnée disponible pour l'espèce : {nom_vernaculaire_selection}")
+
 
 
 st.header("Carte des observations des oiseaux", divider=True)
