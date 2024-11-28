@@ -35,5 +35,5 @@ ver = df["Nom vernaculaire"]
 st.bar_chart(ver)
 
 st.header("Tableau du nombre d'espèce", divider=True)
-#tab1 = data["Nom vernaculaire"].value_counts()
-#tab1
+tab1 = data["Nom vernaculaire"].value_counts()
+tab1
