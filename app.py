@@ -21,30 +21,45 @@ df = pd.DataFrame(data)
 df
 
 
-#st.header("Distribution des noms des sites", divider=True)
-#bar = df["Nom du site"].str.split(" ;").str[0]
-#st.scatter_chart(bar)
+st.header("Répartition des espèces par type de parc", divider=True)
+if "Type" not in data.columns:
+    st.error("La colonne 'Type' est manquante dans les données.")
+    st.stop()
 
-#st.header("Distribution des types", divider=True)
-#ty = df["Type"]
-#st.scatter_chart(ty)
+type_counts = data["Type"].value_counts().reset_index()
+type_counts.columns = ["Type", "Count"]
 
-#st.header("Nombre d'espèces observer par parc", divider=True)
-#df_grouped = df.groupby("Période d'observation")["Nom du site"].first().reset_index()
-#st.scatter_chart(df_grouped)
+chart = (
+    alt.Chart(type_counts)
+    .mark_bar(color="skyblue", stroke="black")
+    .encode(
+        x=alt.X("Type", title="Type"),
+        y=alt.Y("Count", title="Nombre"),
+        tooltip=["Type", "Count"]
+    )
+    .properties(
+        title="Distribution du type de parcs",
+        width=600,
+        height=400,
+    )
+    .configure_axis(
+        labelFontSize=12,
+        titleFontSize=14
+    )
+    .configure_title(
+        fontSize=16
+    )
+)
 
-#st.header("Nombre d'observation par espèce à Marseille", divider=True)
-#ver = df["Nom vernaculaire"]
-#st.scatter_chart(ver)
+st.altair_chart(chart, use_container_width=True)
+
+
 
 
 st.header("Tableau du nombre d'espèce", divider=True)
 tab1 = data["Nom vernaculaire"].value_counts()
 tab1
 
-#st.header("Tableau de répartition des espèces dans les parcs", divider=True)
-#parcs_vernaculaires = data.groupby("Nom du site")["Nom vernaculaire"].apply(list).reset_index()
-#parcs_vernaculaires
 
 st.header("Graphique du nombre d'espèces observer par site", divider=True)
 if "Nom du site" not in data.columns:
