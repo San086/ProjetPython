@@ -62,7 +62,7 @@ tab1
 
 
 
-st.header("Graphique du nombre d'espèces observer par site", divider=True)
+st.header("Graphique du nombre d'espèces observées par site", divider=True)
 if "Nom du site" not in data.columns:
     st.error("La colonne 'Nom du site' est manquante dans les données.")
     st.stop()
@@ -75,11 +75,10 @@ chart = (
     .mark_bar(color="skyblue")
     .encode(
         x=alt.X("Nom du site", sort="-y", title="Nom du Site"),
-        y=alt.Y("Fréquence", title="Nombre d'espèces observer"),
+        y=alt.Y("Fréquence", title="Nombre d'espèces observées"),
         tooltip=["Nom du site", "Fréquence"],
     )
     .properties(
-        title="Distribution des Noms des Sites (Simplifiés)",
         width=800,
         height=400,
     )
