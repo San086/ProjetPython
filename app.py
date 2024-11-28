@@ -58,20 +58,19 @@ arcs = pd.DataFrame({
 
 arcs
 
+
 nom_vernaculaire_selection = st.selectbox(
     "Sélectionnez une espèce pour voir ses informations :", 
     options=data["Nom vernaculaire"].unique()
 )
 
-# Filtrer les informations pour l'espèce sélectionnée
 espece_info = data[data["Nom vernaculaire"] == nom_vernaculaire_selection]
+sites_observes = espece_info["Nom du site"].unique()
 
-# Affichage des informations de l'espèce sélectionnée
-if not espece_info.empty:
-    st.write(f"Informations pour l'espèce : **{nom_vernaculaire_selection}**")
-    st.dataframe(espece_info)
-else:
-    st.warning(f"Aucune donnée disponible pour l'espèce : {nom_vernaculaire_selection}")
+st.write(f"**Sites où l'espèce '{nom_vernaculaire_selection}' a été observée :**")
+st.dataframe(pd.DataFrame({"Nom du site": sites_observes}))
+
+st.write(f"**Nombre total de sites où cette espèce a été observée :** {len(sites_observes)}")
 
 
 
