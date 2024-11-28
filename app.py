@@ -19,7 +19,7 @@ df
 st.header("Répartition des oiseaux dans Marseille (sans fond de carte)", divider=True)
 
 st.header("Distribution des noms des sites", divider=True)
-bar = df["Nom du site"]
+bar = df["Nom du site"].str.split(" ;").str[0]
 st.bar_chart(bar)
 
 st.header("Distribution des types", divider=True)
