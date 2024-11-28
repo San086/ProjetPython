@@ -61,7 +61,9 @@ arcs
 
 nom_vernaculaire_selection = st.selectbox(
     "Sélectionnez une espèce pour voir ses informations :", 
-    options=data["Nom vernaculaire"].unique()
+    options=data["Nom vernaculaire"].unique(),
+    index=None,
+    placeholder="Select contact method...",
 )
 
 espece_info = data[data["Nom vernaculaire"] == nom_vernaculaire_selection]
