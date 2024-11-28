@@ -78,7 +78,7 @@ st.altair_chart(chart, use_container_width=True)
 
 
 
-st.header("Tableau récapitulatif de la répartition des espèces par parc", divider=True)
+st.header("Tableau récapitulatif de la répartition des espèces par site", divider=True)
 arcs = pd.DataFrame({
     "Nom du site": data["Nom du site"].unique(),
     "Nombre d'espèces observées": data.groupby("Nom du site")["Nom vernaculaire"].nunique().values,
