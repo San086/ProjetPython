@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import math
-import folium
+
 
 st.title('Projet oiseaux :bird: de :blue[Marseille] :sunglasses:')
 st.text("Lea COQUEREAU\nGuillaume VALENTIN\nAndreas JULIEN-CARAGUEL")
@@ -59,16 +59,4 @@ arcs
 
 
 st.header("Répartition des oiseaux dans Marseille (sans fond de carte)", divider=True)
-fig = px.scatter_map(
-    points2,
-    lat="Latitude",
-    lon="Longitude",
-    size="Nombre d'espèces observées",  # Taille basée sur les observations
-    color="Nombre d'espèces observées",  # Couleur selon le nombre d'espèces
-    color_continuous_scale=px.colors.sequential.Plasma,
-    hover_name="Nom du site",  # Titre de l'infobulle
-    hover_data={"Nombre d'espèces observées": True, "Adresse": True, "Type":True,"Latitude":False,"Longitude": False},  # Ajout de données dans l'infobulle
-    size_max=20,  # Taille maximale des points
-    zoom=10,  # Zoom initial
-)
-st.map(fig)
+
