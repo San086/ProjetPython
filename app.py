@@ -119,7 +119,7 @@ espece_info = data[data["Nom vernaculaire"] == nom_vernaculaire_selection]
 sites_observes = espece_info["Nom du site"].unique()
 
 st.write(f"**Sites où l'espèce '{nom_vernaculaire_selection}' a été observée :**")
-st.dataframe(pd.DataFrame({"Nom du site": sites_observes}))
+st.dataframe(pd.DataFrame({"Nom du site                ": sites_observes}))
 
 st.write(f"**Nombre total de sites où cette espèce a été observée :** {len(sites_observes)}")
 
