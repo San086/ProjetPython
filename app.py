@@ -58,6 +58,7 @@ arcs
 
 
 
+st.header("Carte des observations des oiseaux", divider=True)
 
 if 'Latitude' not in data.columns or 'Longitude' not in data.columns:
     st.error("Le fichier doit contenir les colonnes 'Latitude' et 'Longitude'.")
@@ -65,14 +66,9 @@ if 'Latitude' not in data.columns or 'Longitude' not in data.columns:
 
 data = data.rename(columns={'Latitude': 'latitude', 'Longitude': 'longitude'})
 
-
-#st.header("Tableau des données")
-#st.dataframe(data)
-
-# Création d'une carte avec les points des coordonnées
 st.header("Carte des observations des oiseaux", divider=True)
 try:
-    mappy = data[['latitude', 'longitude']].dropna()  # Retirer les lignes avec des valeurs manquantes
+    mappy = data[['latitude', 'longitude']].dropna() 
     st.map(mappy)
 except Exception as e:
     st.error(f"Une erreur est survenue lors de la création de la carte : {e}")
