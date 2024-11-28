@@ -46,6 +46,38 @@ tab1
 #parcs_vernaculaires = data.groupby("Nom du site")["Nom vernaculaire"].apply(list).reset_index()
 #parcs_vernaculaires
 
+st.header("Graphique du nombre d'espèces observer par site", divider=True)
+if "Nom du site" not in data.columns:
+    st.error("La colonne 'Nom du site' est manquante dans les données.")
+    st.stop()
+
+site_counts = data["Nom du site"].value_counts().reset_index()
+site_counts.columns = ["Nom du site", "Fréquence"]
+
+chart = (
+    alt.Chart(site_counts)
+    .mark_bar(color="skyblue")
+    .encode(
+        x=alt.X("Nom du site", sort="-y", title="Nom du Site"),
+        y=alt.Y("Fréquence", title="Nombre d'espèces observer"),
+        tooltip=["Nom du site", "Fréquence"],
+    )
+    .properties(
+        title="Distribution des Noms des Sites (Simplifiés)",
+        width=800,
+        height=400,
+    )
+    .configure_axis(
+        labelFontSize=12,
+        titleFontSize=14,
+    )
+    .configure_title(fontSize=16)
+)
+
+st.altair_chart(chart, use_container_width=True)
+
+
+
 st.header("Tableau récapitulatif de la répartition des espèces par parc", divider=True)
 arcs = pd.DataFrame({
     "Nom du site": data["Nom du site"].unique(),
@@ -90,45 +122,7 @@ try:
     st.map(mappy)
 except Exception as e:
     st.error(f"Une erreur est survenue lors de la création de la carte : {e}")
-
-
-
-
-
-st.header("Graphique du nombre d'espèces observer par site", divider=True)
-# Vérification de la colonne "Nom du site"
-if "Nom du site" not in data.columns:
-    st.error("La colonne 'Nom du site' est manquante dans les données.")
-    st.stop()
-
-# Comptage des occurrences par site
-site_counts = data["Nom du site"].value_counts().reset_index()
-site_counts.columns = ["Nom du site", "Fréquence"]
-
-# Création du graphique avec Altair
-chart = (
-    alt.Chart(site_counts)
-    .mark_bar(color="skyblue")
-    .encode(
-        x=alt.X("Nom du site", sort="-y", title="Nom du Site"),
-        y=alt.Y("Fréquence", title="Nombre d'espèces observer"),
-        tooltip=["Nom du site", "Fréquence"],
-    )
-    .properties(
-        title="Distribution des Noms des Sites (Simplifiés)",
-        width=800,
-        height=400,
-    )
-    .configure_axis(
-        labelFontSize=12,
-        titleFontSize=14,
-    )
-    .configure_title(fontSize=16)
-)
-
-# Affichage dans Streamlit
-st.altair_chart(chart, use_container_width=True)
-
+    
 
 
 st.header("Surprise", divider=True)
