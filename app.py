@@ -62,7 +62,7 @@ tab1
 
 
 
-st.header("Graphique du nombre d'espèces observées par site", divider=True)
+st.header("Nombre d'espèces observées par site", divider=True)
 if "Nom du site" not in data.columns:
     st.error("La colonne 'Nom du site' est manquante dans les données.")
     st.stop()
