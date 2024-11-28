@@ -4,5 +4,4 @@ matplotlib.pyplot
 seaborn
 math
 streamlit
-plotly.express
 folium
