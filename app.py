@@ -22,3 +22,7 @@ st.header("Distribution des noms des sites", divider=True)
 bar = df["Nom du site"]
 st.bar_chart(bar)
 
+st.header("Distribution des types", divider=True)
+ty = df["Type"]
+st.bar_chart(ty)
+
