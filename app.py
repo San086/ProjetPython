@@ -124,7 +124,7 @@ st.write(f"**Nombre total de sites où cette espèce a été observée :** {len(
 
 
 
-st.header("Carte des observations des oiseaux", divider=True)
+st.header("Carte de la localisation des parcs", divider=True)
 
 if 'Latitude' not in data.columns or 'Longitude' not in data.columns:
     st.error("Le fichier doit contenir les colonnes 'Latitude' et 'Longitude'.")
