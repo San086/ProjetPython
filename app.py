@@ -58,11 +58,27 @@ arcs
 
 
 
+
+
+
 st.header("Répartition des oiseaux dans Marseille (sans fond de carte)", divider=True)
 
+# Vérification des colonnes nécessaires
+if 'Latitude' not in data.columns or 'Longitude' not in data.columns:
+    st.error("Le fichier doit contenir les colonnes 'Latitude' et 'Longitude'.")
+    st.stop()
+
+# Renommer les colonnes pour compatibilité avec st.map()
+data = data.rename(columns={'Latitude': 'latitude', 'Longitude': 'longitude'})
+
+# Affichage du tableau des données
+st.header("Tableau des données")
+st.dataframe(data)
+
+# Création d'une carte avec les points des coordonnées
 st.header("Carte des observations des oiseaux")
 try:
-    mappy = data[['Latitude', 'Longitude']].dropna()  # Retirer les lignes avec des valeurs manquantes
+    mappy = data[['latitude', 'longitude']].dropna()  # Retirer les lignes avec des valeurs manquantes
     st.map(mappy)
 except Exception as e:
     st.error(f"Une erreur est survenue lors de la création de la carte : {e}")
