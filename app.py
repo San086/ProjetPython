@@ -63,11 +63,6 @@ if 'Latitude' not in data.columns or 'Longitude' not in data.columns:
     st.error("Le fichier doit contenir les colonnes 'Latitude' et 'Longitude'.")
     st.stop()
 
-data = data.rename(columns={'Latitude': 'latitude', 'Longitude': 'longitude'})
-
-st.header("Tableau des données")
-st.dataframe(data)
-
 try:
     mappy = data[['latitude', 'longitude']].dropna()  
     st.map(mappy)
