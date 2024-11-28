@@ -121,11 +121,11 @@ chart = (
     .mark_bar(color="skyblue")
     .encode(
         x=alt.X("Nom du site", sort="-y", title="Nom du Site"),
-        y=alt.Y("Fréquence", title="Fréquence"),
-        tooltip=["Nom du site", "Fréquence"],
+        y=alt.Y("Nombre d'espèces observer", title="Nombre d'espèces observer"),
+        tooltip=["Nom du site", "Nombre d'espèces observer"],
     )
     .properties(
-        title="Distribution des Noms des Sites (Simplifiés)",
+        title="Distribution du nombre d'espèces observer dans chaque parcs",
         width=800,
         height=400,
     )
