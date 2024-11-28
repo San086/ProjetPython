@@ -56,10 +56,10 @@ st.altair_chart(chart, use_container_width=True)
 
 
 
-
-
 st.header("Tableau du nombre d'espèce", divider=True)
-data["Nom vernaculaire"].value_counts()
+tab1 = data["Nom vernaculaire"].value_counts()
+tab1
+
 
 
 st.header("Graphique du nombre d'espèces observer par site", divider=True)
