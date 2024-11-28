@@ -6,22 +6,22 @@ import altair as alt
 
 
 st.title('Projet oiseaux :bird: de :blue[Marseille] :sunglasses:')
-st.text("Lea COQUEREAU\nGuillaume VALENTIN\nAndreas JULIEN-CARAGUEL\n")
+st.text("Léa COQUEREAU\nGuillaume VALENTIN\nAndreas JULIEN-CARAGUEL\n")
 st.header("Problématique", divider="gray")
 st.link_button("Source de la donnée", "https://www.data.gouv.fr/fr/datasets/marseille-biodiversite-oiseaux/")
-st.text("Comment les différentes espèces d'oiseaux de Marseille sont-elle réparti dans la ville ?")
+st.text("Comment les différentes espèces d'oiseaux de Marseille sont-elles réparti dans la ville ?")
 
 
 fichier = "marseille_biodiversite_oiseaux_parcs.csv"
 data = pd.read_csv(fichier)
 
-st.header("Tableau de données (brute)", divider=True)
+st.header("Tableau de données (brut)", divider=True)
 data.insert(0, 'ID', range(1, 1 + len(data)))
 df = pd.DataFrame(data)
 df
 
 
-st.header("Répartition du nombre d'individu par type de parc", divider=True)
+st.header("Répartition du nombre d'individus par type de parc", divider=True)
 if "Type" not in data.columns:
     st.error("La colonne 'Type' est manquante dans les données.")
     st.stop()
@@ -34,11 +34,11 @@ chart = (
     .mark_bar(color="skyblue", stroke="black")
     .encode(
         x=alt.X("Type", title="Type"),
-        y=alt.Y("Count", title="Nombre d'individu observer"),
+        y=alt.Y("Count", title="Nombre d'individu observé"),
         tooltip=["Type", "Count"]
     )
     .properties(
-        title="Distribution du type de parcs",
+        title="Distribution du type de parc",
         width=600,
         height=400,
     )
@@ -56,7 +56,7 @@ st.altair_chart(chart, use_container_width=True)
 
 
 
-st.header("Tableau du nombre d'espèce", divider=True)
+st.header("Tableau du nombre d'espèces", divider=True)
 tab1 = data["Nom vernaculaire"].value_counts()
 tab1
 
