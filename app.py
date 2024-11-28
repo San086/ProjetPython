@@ -41,9 +41,9 @@ st.header("Tableau du nombre d'espèce", divider=True)
 tab1 = data["Nom vernaculaire"].value_counts()
 tab1
 
-st.header("Tableau de répartition des espèces dans les parcs", divider=True)
-parcs_vernaculaires = data.groupby("Nom du site")["Nom vernaculaire"].apply(list).reset_index()
-parcs_vernaculaires
+#st.header("Tableau de répartition des espèces dans les parcs", divider=True)
+#parcs_vernaculaires = data.groupby("Nom du site")["Nom vernaculaire"].apply(list).reset_index()
+#parcs_vernaculaires
 
 st.header("Tableau récapitulatif de la répartition des espèces par parc", divider=True)
 arcs = pd.DataFrame({
