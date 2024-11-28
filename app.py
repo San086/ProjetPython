@@ -60,8 +60,16 @@ arcs
 
 
 st.header("Répartition des oiseaux dans Marseille (sans fond de carte)", divider=True)
-test = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-    columns=["lat", "lon"],
+fig = px.scatter_map(
+    points2,
+    lat="Latitude",
+    lon="Longitude",
+    size="Nombre d'espèces observées",  # Taille basée sur les observations
+    color="Nombre d'espèces observées",  # Couleur selon le nombre d'espèces
+    color_continuous_scale=px.colors.sequential.Plasma,
+    hover_name="Nom du site",  # Titre de l'infobulle
+    hover_data={"Nombre d'espèces observées": True, "Adresse": True, "Type":True,"Latitude":False,"Longitude": False},  # Ajout de données dans l'infobulle
+    size_max=20,  # Taille maximale des points
+    zoom=10,  # Zoom initial
 )
-st.map(test)
+st.map(fig)
