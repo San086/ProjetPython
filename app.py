@@ -54,42 +54,6 @@ chart = (
 st.altair_chart(chart, use_container_width=True)
 
 
-st.header("Nombres d'espèces observer pour lors des différentes campagne d'observation", divider=True)
-required_columns = ["Nom du site", "Nom vernaculaire", "Période d'observation"]
-missing_columns = [col for col in required_columns if col not in data.columns]
-if missing_columns:
-    st.error(f"Les colonnes suivantes sont manquantes dans les données : {', '.join(missing_columns)}")
-    st.stop()
-
-data["Site et Période"] = data["Nom du site"] + " (" + data["Période d'observation"].astype(str) + ")"
-
-species_counts = data.groupby("Site et Période")["Nom vernaculaire"].nunique().reset_index()
-species_counts.columns = ["Site et Période", "Nombre d'espèces"]
-
-chart = (
-    alt.Chart(species_counts)
-    .mark_bar(color="skyblue", stroke="black")
-    .encode(
-        x=alt.X("Site et Période", sort="-y", title="Nom du site et Période d'observation", axis=alt.Axis(labelAngle=-45)),
-        y=alt.Y("Nombre d'espèces", title="Nombre d'espèces observées"),
-        tooltip=["Site et Période", "Nombre d'espèces"]
-    )
-    .properties(
-        title="Nombre d'espèces observées par parc",
-        width=800,
-        height=400,
-    )
-    .configure_axis(
-        labelFontSize=12,
-        titleFontSize=14
-    )
-    .configure_title(
-        fontSize=16
-    )
-)
-
-st.altair_chart(chart, use_container_width=True)
-
 
 
 
