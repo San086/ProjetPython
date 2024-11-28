@@ -30,3 +30,6 @@ st.header("Nombre d'espèces observer par parc", divider=True)
 df_grouped = df.groupby("Période d'observation")["Nom du site"].first().reset_index()
 st.bar_chart(df_grouped)
 
+st.header("Nombre d'observation par espèce à Marseille", divider=True)
+ver = df["Nom vernaculaire"]
+st.bar_chart(ver)
